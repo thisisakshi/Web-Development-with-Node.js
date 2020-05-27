@@ -1,0 +1,21 @@
+{{#each data}}
+	<div class="card">
+		<p class="card-name">{{this.companyName}}</p>
+	   	<p class="card-regular">by 
+			   <i><b>{{{this.founder}}}</b></i>
+			   <br/>
+			   {{this.location}}
+			   <br/><br/>
+			   <i>{{this.description}}</i>
+			   <br/><br/>
+			   <a href="/post/{{this.companyName}}">Learn More</a>
+		</p>
+	</div>	
+
+{{else}}
+
+<article>
+    <h1>No Businesses Found</h1>
+</article>
+{{/each}}
+

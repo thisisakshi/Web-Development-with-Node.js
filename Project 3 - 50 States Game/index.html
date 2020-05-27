@@ -1,0 +1,133 @@
+<!--
+    Here is a starting point for the project.
+    jQuery and a index.js file have been included for you.
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>50 State Game</title>
+    <style type="text/css">
+        /* Do not worry about doing extensive styling. Please make sure it is
+           obvious where the input bar, start button, running list of states,
+           and timer all are.
+            rgb(211, 212, 217); */
+
+        #background {
+            background-color: rgb(255, 249, 251);
+            text-align: center;
+        }
+
+        #heading {
+            color:rgb(187, 10, 33);
+            font-size: 60px;
+        }
+
+        #startButton {
+            /* background-color: rgb(75, 136, 162); */
+            background-color:  rgb(21, 0, 114);
+            width: 200px;
+            height: 40px;
+            border-radius: 15px;
+            font-size: 20px;
+            color: rgb(255, 249, 251);
+        }
+
+        #timerLabel, #inputLabel, #missedStates,#spanishSpeakerHeader  {
+            color:rgb(187, 10, 33);
+            font-size: 20px
+        }
+        
+        #timer, #spanishSpeakers {
+            color:  rgb(21, 0, 114);
+            font-size: 40px;
+            margin-top: -20px;
+        }
+
+        #stateName {
+            width: 300px;
+            height: 40px;
+            border-radius: 15px;
+            border-color: rgb(21, 0, 114);
+            font-size: 20px;
+        }
+
+        #inputLayer {
+            margin-top: -15px;
+        }
+
+        table,td {
+            margin-left:auto;
+            margin-right:auto;
+            width: 800px;
+        }
+
+        #usedStates  {
+            color: rgb(21, 0, 114);
+            font-size: 20px;
+        }
+
+        #footer {
+            position: absolute; 
+            bottom: 10px;
+        }
+
+
+    </style>
+</head>
+
+<body id="background">
+    
+    <h1 id="heading">The 50 State Game</h1>
+
+    <!--Start Button -->
+    <button id="startButton">START GAME</button>
+    <br/><br/>
+
+    <!-- Timer -->
+    <p id="timerLabel">TIMER</p>
+    <p id="timer">-- : --</p>
+
+    <!-- Input Area -->
+    <div id="inputLayer">
+        <label for="stateName" id="inputLabel">Enter U.S. State</label><br/>
+        <input type="text" id="stateName" name="stateName" onInput="onStateInput()"><br/>
+    </div><br/><br/>
+
+    <table>
+        <tr>
+            <th>YAY!</th>
+            <th>NAY :( </th>
+        </tr>
+        <tr>
+            <td>
+                <!-- User Entered States -->
+                <div id="usedStates"></div>
+            </td>
+            <td>
+                <!-- Missed States -->
+                <div id="missedStates"></div>
+            </td>
+        </tr>
+        
+    </table>
+
+     <!-- Spanish Speaker Count -->
+     <p id=spanishSpeakerHeader></p>
+     <p id="spanishSpeakers"></p>
+
+     <p id="footer">A project by Akshita Agarwal | CMSC389K | Spring2020</p>
+        
+
+        
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        console.log(abvMap);
+    </script>
+</body>
+
+</html>

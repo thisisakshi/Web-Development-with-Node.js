@@ -1,0 +1,55 @@
+<style>
+       * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ 
+ body {
+     font: 13px Helvetica, Arial;
+ }
+ 
+ form {
+  
+     padding: 10px;
+     position: fixed;
+     bottom: 0;
+     width: 90%;
+ }
+ 
+ form input {
+     border: 10;
+     padding: 10px;
+     width: 90%;
+     margin-right: .5%;
+ }
+ 
+ form button {
+     width: 8%;
+     background: rgb(130, 224, 255);
+     border: none;
+
+ }
+ 
+ #messages {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ #messages li {
+     padding: 5px 10px;
+ }
+ 
+ #messages li:nth-child(odd) {
+     background: #eee;
+ }
+</style>
+<h2> Talk to your local business owners</h2>
+<ul id="messages">
+      <li>Hello</li>
+      <li>Hi</li>
+</ul>
+<form id="box" action="">
+	<input id="m" autocomplete="off" /><button>Send</button>
+</form>

@@ -1,0 +1,42 @@
+<input type="search" id="search" name="search" size="30" placeholder="Company Search">
+<div id="data">
+    {{#each data}}
+	<div class="card">
+		<p class="card-name">{{this.companyname}}</p>
+	   	<p class="card-regular">by 
+			   <i><b>{{{this.founder}}}</b></i>
+			   <br/>
+			   {{this.location}}
+			   <br/><br/>
+			   <i>{{this.description}}</i>
+			   <br/><br/>
+			   <a href="/post/{{this.id}}">Learn More</a>
+               
+		</p>
+	</div>	
+    {{else}}
+    <article>
+        <h1>No Businesses Found</h1>
+    </article>
+    {{/each}}
+</div>
+
+
+<script>
+    $('#search').on('keyup', function(e){
+        $('#data').html("");
+        var text = $(this).val();
+        var res_html = "";
+        App.data.forEach(function(d){
+            if(d.companyname.substring(0, text.length) == text){
+                res_html += "<li><a href='/post/" + d._id + "'>" + d.companyname + "</a></li>";
+            }
+        });
+        if(res_html == ""){
+            $('#data').html("No Matches");
+        }else{
+            $('#data').html("<ol>" + res_html + "</ol>");
+        }
+    });
+</script>
+

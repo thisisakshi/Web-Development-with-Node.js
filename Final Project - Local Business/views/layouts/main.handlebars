@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/public/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+    <title>Final Project</title>
+</head>
+<body>
+    <header>
+        <table class="top">
+            <tr>
+            <td class="top_left">
+                <a href="/" class="header">Local Businesses</a><br/>
+                    <button class="new-content" onclick="location.href='/addBusiness'">Add your Business</button>
+                    <button class="new-content" onclick="location.href='/showcase'">Find Local Fairs</button>
+                
+            </td>
+
+            <td class="top_right">
+                <div>
+                    <br/><a href="/location">Location</a><br/>
+                    <a href="/industry">Industry</a><br/>
+                    <a href="/smallCompanies">Small Sized Companies (less than 50)</a><br/>
+                     <a href="/youngCompanies">Young Companies (Less than 10 years)</a><br/>
+                     <a href="/directoryByName">Business Directory</a><br/>
+                     <a href="/chat">Talk to other business owners</a><br/><br/>
+                     <b><a href="/aboutThisProject">About This Project</a><br/></b>
+                </div>
+                
+            </td>
+            </tr>
+        </table>
+    </header>
+    {{{body}}}
+
+    <script src="/socket.io/socket.io.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script>
+        var socket = io(); 
+        $('#box').submit(function(){ //When send button is pressed
+            socket.emit('chat message', $('#m').val());
+            $('#m').val('');
+            return false; //Ensures the page does not reload
+        });
+        //Task 1 - Step 2: Listen for message from server when some client created a new chat message and update HTML page
+        socket.on('chat message', function(msg) {
+            $('#messages').append($('<li>').text(msg));
+        });
+    </script>
+</body>
+
+<script>
+    {{{state}}}
+</script>
+
+</html>
+

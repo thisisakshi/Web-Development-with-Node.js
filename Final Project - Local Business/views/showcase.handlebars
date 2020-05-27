@@ -1,0 +1,24 @@
+<br/><br/><button class="new-content" onclick="location.href='/addShowcase'">Add a Showcase</button>
+<div id="data">
+    {{#each data}}
+	<div class="showcasecard">
+	   	<p class="card-regular">
+               <br/><b>{{this.eventname}}</b>
+			   <br/>
+			   {{this.location}}
+               <br/>
+               {{this.description}}
+               <br/>
+                <a href="{{this.website}}">Find us on Social Media</a>
+                <br/><br/>
+			   <a href="/deleteShowcase/{{this.id}}"><i> Delete Showcase</i></a>
+                           
+               
+		</p>
+	</div>	
+    {{else}}
+    <article>
+        <h1>No Events Found</h1>
+    </article>
+    {{/each}}
+</div>
