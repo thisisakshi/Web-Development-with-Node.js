@@ -1,4 +1,4 @@
-# Learning_Web_Development
+# Web Development with Node.js
 
 All project here were done as part of CMSC389K - Introduction to Web Development, a course at the University of Maryland, College Park - https://github.com/UMD-CS-STICs/389k-spring2020
 
